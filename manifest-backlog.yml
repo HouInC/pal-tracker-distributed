@@ -5,6 +5,6 @@ applications:
   memory: 1G
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-HIC.app.system.cumuluslabs.io
+    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-HIC.apps.system.cumuluslabs.io
   services:
   - tracker-backlog-database
