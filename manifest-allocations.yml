@@ -5,6 +5,6 @@ applications:
   memory: 1G
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: http://allocations-pal-HIC.api.system.cumuluslabs.io
+    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-HIC.api.system.cumuluslabs.io
   services:
   - tracker-allocations-database
