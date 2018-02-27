@@ -4,7 +4,6 @@ applications:
   host: timesheets-pal-HIC
   memory: 1G
   instances: 1
-  env:
-    REGISTRATION_SERVER_ENDPOINT: https://registration-pal-HIC.apps.cumuluslabs.io
   services:
   - tracker-timesheets-database
+  - tracker-service-registry
