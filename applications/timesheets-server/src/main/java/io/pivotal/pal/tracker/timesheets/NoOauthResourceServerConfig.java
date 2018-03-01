@@ -13,14 +13,14 @@ import org.springframework.web.client.RestTemplate;
 @ConditionalOnProperty(value = "application.oauth-enabled", havingValue = "false")
 public class NoOauthResourceServerConfig extends ResourceServerConfigurerAdapter {
 
-    @Bean
-    @LoadBalanced
-    public RestOperations restOperations(){
-        return new RestTemplate();
-    }
-
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().anyRequest().permitAll();
+    }
+
+    @Bean
+    @LoadBalanced
+    public RestOperations restOperations() {
+        return new RestTemplate();
     }
 }

@@ -10,13 +10,13 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ProjectClient {
 
-    private final RestOperations restOperations;
-    private final String endpoint;
     private final Logger logger = LoggerFactory.getLogger(getClass());
     private final Map<Long, ProjectInfo> projectsCache = new ConcurrentHashMap<>();
+    private final RestOperations restOperations;
+    private final String endpoint;
 
     public ProjectClient(RestOperations restOperations, String registrationServerEndpoint) {
-        this.restOperations= restOperations;
+        this.restOperations = restOperations;
         this.endpoint = registrationServerEndpoint;
     }
 

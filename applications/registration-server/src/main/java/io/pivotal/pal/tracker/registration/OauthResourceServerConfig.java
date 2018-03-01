@@ -7,15 +7,18 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 
 @Configuration
-@ConditionalOnProperty(value = "application.oauth-enabled",matchIfMissing = true)
-public class OauthResourceServerConfig extends ResourceServerConfigurerAdapter{
-    @Override
-    public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources.resourceId(null);
-    }
+@ConditionalOnProperty(value = "application.oauth-enabled", matchIfMissing = true)
+public class OauthResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
+        // enforce authentication on our API endpoints.
         http.authorizeRequests().anyRequest().authenticated();
+    }
+
+    @Override
+    public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
+        // do not require a resource id in AccessToken.
+        resources.resourceId(null);
     }
 }

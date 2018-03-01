@@ -20,7 +20,7 @@ public class NoOauthResourceServerConfig extends ResourceServerConfigurerAdapter
 
     @Bean
     @LoadBalanced
-    public RestOperations restOperations(){
+    public RestOperations restOperations() {
         return new RestTemplate();
     }
 }

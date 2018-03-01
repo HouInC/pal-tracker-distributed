@@ -28,7 +28,6 @@ public class AccountController {
             .collect(toList());
     }
 
-
     private AccountInfo present(AccountRecord record) {
         return accountInfoBuilder()
             .id(record.id)
