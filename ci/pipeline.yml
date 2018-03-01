@@ -4,7 +4,7 @@ resources:
   type: git
   source:
     uri: {{github-repository}}
-    branch: my-work
+    branch: security
     private_key: {{github-private-key}}
 
 - name: version
@@ -140,3 +140,4 @@ jobs:
       manifest: pal-tracker/manifest-timesheets.yml
       path: timesheets-artifacts/timesheets-server*.jar
       current_app_name: tracker-timesheets
+
